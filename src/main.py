@@ -5,7 +5,6 @@ import pandas as pd
 import time
 import os
 import platform
-import system
 from threading import Thread
 import threading
 from io import StringIO
@@ -14,10 +13,9 @@ from streamlit_autorefresh import st_autorefresh
 st_autorefresh(interval=1000, key="refresh")
 
 if platform.system() == "Windows":
-    lib_path = "build/orderbook.dll"
+    lib = ctypes.CDLL(r"build/orderbook.dll")
 else:
-    lib_path = "build/orderbook.so"
-lib = ctypes.CDLL(lib_path)
+    lib = ctypes.CDLL(r"build/orderbook.so")
 
 class order(Structure):
     _fields_ = [
