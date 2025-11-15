@@ -12,11 +12,11 @@ from io import StringIO
 
 if "build_lib" not in st.session_state:
     if platform.system() == "Windows":
-        result = subprocess.run(["build.bat"], capture_output=True)
-        result.check_returncode
+        result = subprocess.run(["build\\build.bat"], capture_output=True)
+        print(result.check_returncode)
     else:
         result = subprocess.run(["build/build.sh"], capture_output=True)
-        result.check_returncode
+        print(result.check_returncode)
     st.session_state.build_lib = True 
 
 from streamlit_autorefresh import st_autorefresh

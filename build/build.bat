@@ -7,5 +7,4 @@ g++ -shared -Iinclude -fPIC -o build/orderbook.dll src/order.cpp src/orderbook.c
 
 echo =======================================
 echo Build complete: build\orderbook.dll
-echo =======================================
-exit /b 0
+echo ======================================= 
