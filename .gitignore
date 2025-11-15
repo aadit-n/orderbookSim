@@ -22,7 +22,6 @@ ENV/
 *.a
 *.lib
 
-build/
 cmake-build-*/
 CMakeFiles/
 Makefile
