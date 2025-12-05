@@ -14,6 +14,6 @@ RUN g++ -std=c++17 -O2 -fPIC -Iinclude \
 
 RUN pip install -r requirements.txt
 
-EXPOSE 8580
+EXPOSE 8501
 
-CMD ["streamlit", "run", "src/main.py"]
+CMD ["streamlit", "run", "src/main.py", "--server.address=0.0.0.0", "--server.port=8501"]
